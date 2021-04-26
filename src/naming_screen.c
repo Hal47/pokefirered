@@ -21,7 +21,6 @@
 #include "text_window.h"
 #include "trig.h"
 #include "constants/help_system.h"
-#include "constants/flags.h"
 #include "constants/songs.h"
 #include "constants/event_objects.h"
 
@@ -707,7 +706,7 @@ static void pokemon_transfer_to_pc_with_message(void)
     StringExpandPlaceholders(gStringVar4, sTransferredToPCMessages[stringToDisplay]);
     DrawDialogueFrame(0, FALSE);
     gTextFlags.canABSpeedUpPrint = TRUE;
-    AddTextPrinterParameterized2(0, 2, gStringVar4, GetTextSpeedSetting(), NULL, TEXT_COLOR_DARK_GREY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GREY);
+    AddTextPrinterParameterized2(0, 2, gStringVar4, GetTextSpeedSetting(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     CopyWindowToVram(0, COPYWIN_BOTH);
 }
 
@@ -1714,7 +1713,7 @@ static void DeleteTextCharacter(void)
     var2 = GetKeyRoleAtCursorPos();
     if (var2 == KEY_ROLE_CHAR || var2 == KEY_ROLE_BACKSPACE)
         sub_809E518(1, 0, 1);
-    PlaySE(SE_BOWA);
+    PlaySE(SE_BALL);
 }
 
 static bool8 AppendCharToBuffer_CheckBufferFull(void)
@@ -1815,9 +1814,9 @@ struct TextColor   // Needed because of alignment
 
 static const struct TextColor sTextColorStruct = {
     {
-        {TEXT_DYNAMIC_COLOR_4, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY},
-        {TEXT_DYNAMIC_COLOR_5, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY},
-        {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY}
+        {TEXT_DYNAMIC_COLOR_4, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY},
+        {TEXT_DYNAMIC_COLOR_5, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY},
+        {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY}
     }
 };
 
@@ -1881,7 +1880,7 @@ static void sub_809FA60(void)
 
 static void sub_809FAE4(void)
 {
-    const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY };
+    const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY };
     int strwidth = GetStringWidth(0, gText_MoveOkBack, 0);
 
     FillWindowPixelBuffer(sNamingScreenData->windows[4], PIXEL_FILL(15));

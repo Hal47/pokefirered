@@ -12,12 +12,9 @@
 #include "item.h"
 #include "menu.h"
 #include "new_menu_helpers.h"
-#include "constants/vars.h"
 #include "constants/items.h"
-#include "constants/species.h"
 #include "constants/songs.h"
 #include "constants/layouts.h"
-#include "constants/trainers.h"
 #include "constants/facility_trainer_classes.h"
 #include "constants/event_objects.h"
 #include "constants/trainer_tower.h"
@@ -319,7 +316,7 @@ static const struct WindowTemplate sTimeBoardWindowTemplate[] = {
 
 static const u32 sUnused_847A228 = 0x70;
 
-static const u8 sTextColors[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GREY, TEXT_COLOR_LIGHT_GREY};
+static const u8 sTextColors[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 
 static void (*const sTrainerTowerFunctions[])(void) = {
     [TRAINER_TOWER_FUNC_INIT_FLOOR]             = InitTrainerTowerFloor,
@@ -376,20 +373,20 @@ static const u16 sPrizeList[] = {
 };
 
 static const u16 sTrainerTowerEncounterMusic[] = {
-    [TRAINER_ENCOUNTER_MUSIC_MALE]        = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_FEMALE]      = MUS_SHOUJO,
-    [TRAINER_ENCOUNTER_MUSIC_GIRL]        = MUS_SHOUJO,
-    [TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS]  = MUS_ROCKET,
-    [TRAINER_ENCOUNTER_MUSIC_INTENSE]     = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_COOL]        = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_AQUA]        = MUS_ROCKET,
-    [TRAINER_ENCOUNTER_MUSIC_MAGMA]       = MUS_ROCKET,
-    [TRAINER_ENCOUNTER_MUSIC_SWIMMER]     = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_TWINS]       = MUS_SHOUJO,
-    [TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR]  = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_HIKER]       = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_INTERVIEWER] = MUS_SHOUNEN,
-    [TRAINER_ENCOUNTER_MUSIC_RICH]        = MUS_SHOUNEN
+    [TRAINER_ENCOUNTER_MUSIC_MALE]        = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_FEMALE]      = MUS_ENCOUNTER_GIRL,
+    [TRAINER_ENCOUNTER_MUSIC_GIRL]        = MUS_ENCOUNTER_GIRL,
+    [TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS]  = MUS_ENCOUNTER_ROCKET,
+    [TRAINER_ENCOUNTER_MUSIC_INTENSE]     = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_COOL]        = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_AQUA]        = MUS_ENCOUNTER_ROCKET,
+    [TRAINER_ENCOUNTER_MUSIC_MAGMA]       = MUS_ENCOUNTER_ROCKET,
+    [TRAINER_ENCOUNTER_MUSIC_SWIMMER]     = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_TWINS]       = MUS_ENCOUNTER_GIRL,
+    [TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR]  = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_HIKER]       = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_INTERVIEWER] = MUS_ENCOUNTER_BOY,
+    [TRAINER_ENCOUNTER_MUSIC_RICH]        = MUS_ENCOUNTER_BOY
 };
 
 static const u8 sSingleBattleChallengeMonIdxs[][2] = {
@@ -504,14 +501,14 @@ void GetTrainerTowerOpponentLoseText(u8 *dest, u8 opponentIdx)
         TT_ConvertEasyChatMessageToString(sTrainerTowerOpponent->speechLose2, dest);
 }
 
-static void SetUpTrainerTowerDataStruct(void) // fakematching
+static void SetUpTrainerTowerDataStruct(void)
 {
     u32 challengeType = gSaveBlock1Ptr->towerChallengeId;
     s32 r4;
     const struct TrainerTowerFloor *const * r7;
 
     sTrainerTowerState = AllocZeroed(sizeof(*sTrainerTowerState));
-    sTrainerTowerState->floorIdx = gMapHeader.mapLayoutId - 42;
+    sTrainerTowerState->floorIdx = gMapHeader.mapLayoutId - LAYOUT_TRAINER_TOWER_1F;
     if (ReadTrainerTowerAndValidate() == TRUE)
         CEReaderTool_LoadTrainerTower(&sTrainerTowerState->unk_0004);
     else
@@ -522,16 +519,7 @@ static void SetUpTrainerTowerDataStruct(void) // fakematching
         r7 = gUnknown_84827B4[challengeType];
         for (r4 = 0; r4 < MAX_TRAINER_TOWER_FLOORS; r4++)
         {
-        #ifndef NONMATCHING
-            void * r5;
-            register void * r0 asm("r0") = sTrainerTowerState;
-            r5 = (void *)(r4 * sizeof(struct TrainerTowerFloor));
-            r0  = r5 + (uintptr_t)r0;
-            r0 += offsetof(struct UnkStruct_203F458, unk_0004.floors);
-            memcpy(r0, r7[r4], sizeof(struct TrainerTowerFloor));
-        #else
-            memcpy(&sTrainerTowerState->unk_0004.floors[r4], r7[r4], sizeof(struct TrainerTowerFloor));
-        #endif
+            *(sTrainerTowerState->unk_0004.floors + r4) = *(r7[r4]); // manual pointer arithmetic needed to match
         }
         sTrainerTowerState->unk_0004.checksum = CalcByteArraySum((void *)sTrainerTowerState->unk_0004.floors, sizeof(sTrainerTowerState->unk_0004.floors));
         ValidateOrResetCurTrainerTowerRecord();

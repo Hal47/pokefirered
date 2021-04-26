@@ -1,10 +1,14 @@
 #ifndef GUARD_CONSTANTS_MAP_GROUPS_H
 #define GUARD_CONSTANTS_MAP_GROUPS_H
 
+//
+// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json
+//
+
 // Map Group 0
 #define MAP_BATTLE_COLOSSEUM_2P (0 | (0 << 8))
 #define MAP_TRADE_CENTER        (1 | (0 << 8))
-#define MAP_RECORD_CENTER       (2 | (0 << 8))
+#define MAP_RECORD_CORNER       (2 | (0 << 8))
 #define MAP_BATTLE_COLOSSEUM_4P (3 | (0 << 8))
 #define MAP_UNION_ROOM          (4 | (0 << 8))
 
@@ -266,7 +270,7 @@
 // Map Group 4
 #define MAP_PALLET_TOWN_PLAYERS_HOUSE_1F   (0 | (4 << 8))
 #define MAP_PALLET_TOWN_PLAYERS_HOUSE_2F   (1 | (4 << 8))
-#define MAP_PALLET_TOWN_GARYS_HOUSE        (2 | (4 << 8))
+#define MAP_PALLET_TOWN_RIVALS_HOUSE       (2 | (4 << 8))
 #define MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB (3 | (4 << 8))
 
 // Map Group 5

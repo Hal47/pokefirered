@@ -24,9 +24,6 @@
 #include "random.h"
 #include "graphics.h"
 #include "constants/songs.h"
-#include "constants/species.h"
-#include "constants/flags.h"
-#include "constants/vars.h"
 #include "constants/maps.h"
 
 struct HallofFameMon
@@ -286,8 +283,8 @@ static const struct SpriteTemplate sSpriteTemplate_Confetti = {
     .callback = SpriteCB_Confetti
 };
 
-static const u16 sHallOfFame_Pal[] = INCBIN_U16("graphics/hall_of_fame/unk_840C3BC.gbapal");
-static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/hall_of_fame/unk_840C3BC.4bpp.lz");
+static const u16 sHallOfFame_Pal[] = INCBIN_U16("graphics/hall_of_fame/hall_of_fame.gbapal");
+static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/hall_of_fame/hall_of_fame.4bpp.lz");
 
 static const struct HallofFameMon sDummyHofMon = {
     .tid = 0x03EA03EA, // (u16[]){1002, 1002} corrupted sprite template?
@@ -351,7 +348,7 @@ static bool8 InitHallOfFameScreen(void)
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HofIdle);
-            PlayBGM(MUS_DENDOU);
+            PlayBGM(MUS_HALL_OF_FAME);
             return FALSE;
         }
         break;
@@ -571,7 +568,7 @@ static void Task_Hof_PaletteFadeAndPrintWelcomeText(u8 taskId)
     }
 
     HallOfFame_PrintWelcomeText(0, 15);
-    PlaySE(SE_DENDOU);
+    PlaySE(SE_APPLAUSE);
     gTasks[taskId].data[3] = 400;
     gTasks[taskId].func = Task_Hof_ApplauseAndConfetti;
 }

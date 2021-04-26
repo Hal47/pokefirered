@@ -3,7 +3,6 @@
 #include "scanline_effect.h"
 #include "text_window_graphics.h"
 #include "menu.h"
-#include "menu_helpers.h"
 #include "task.h"
 #include "overworld.h"
 #include "help_system.h"
@@ -11,6 +10,9 @@
 #include "strings.h"
 #include "field_fadetransition.h"
 #include "gba/m4a_internal.h"
+
+// can't include the one in menu_helpers.h since Task_OptionMenu needs bool32 for matching
+bool32 MenuHelpers_CallLinkSomething(void);
 
 // Menu items
 enum
@@ -174,7 +176,7 @@ static const u8 *const sButtonTypeOptions[] =
 	gText_ButtonTypeLEqualsA
 };
 
-static const u8 sOptionMenuPickSwitchCancelTextColor[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY};
+static const u8 sOptionMenuPickSwitchCancelTextColor[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 static const u8 sOptionMenuTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_RED};
 
 // Functions
@@ -369,7 +371,7 @@ static void Task_OptionMenu(u8 taskId)
         sOptionMenuPtr->loadState++;
         break;
     case 2:
-        if (MenuHelpers_CallLinkSomething() == TRUE)
+        if (((bool32)MenuHelpers_CallLinkSomething()) == TRUE)
             break;
         switch (OptionMenu_ProcessInput())
         {

@@ -148,10 +148,10 @@ extern const u8 gTeachyTvText_TMsScript2[];
 extern const u8 gTeachyTvText_RegisterScript2[];
 
 // help_system_812B1E0
-extern const u8 gUnknown_841DFA5[];
-extern const u8 gUnknown_841DFAC[];
-extern const u8 gUnknown_841DFBE[];
-extern const u8 gUnknown_841DFC9[];
+extern const u8 gText_HelpSystemControls_A_Next[];
+extern const u8 gText_HelpSystemControls_PickOkEnd[];
+extern const u8 gText_HelpSystemControls_AorBtoCancel[];
+extern const u8 gText_HelpSystemControls_PickOkCancel[];
 
 // help_system
 extern const u8 gString_Bill[];
@@ -188,7 +188,7 @@ extern const u8 gText_Ghost[];
 
 // pokemon
 extern const u8 gBattleText_Rose[];
-extern const u8 gBattleText_UnknownString3[];
+extern const u8 gText_PkmnsStatChanged2[];
 extern const u8 gBattleText_GetPumped[];
 extern const u8 gBattleText_MistShroud[];
 extern const u8 gText_BadEgg[];
@@ -215,9 +215,9 @@ extern const u8 gString_QuitPlaying[];
 extern const u8 gString_SlotMachineControls[];
 
 // battle_controller_safari
-extern const u8 gUnknown_83FDA4C[];
+extern const u8 gText_EmptyString3[];
 extern const u8 gUnknown_83FE747[];
-extern const u8 gUnknown_83FE6E6[];
+extern const u8 gText_WhatWillPlayerThrow[];
 
 // battle_controller_player
 extern const u8 gText_BattleSwitchWhich[];
@@ -225,23 +225,23 @@ extern const u8 gUnknown_83FE770[];
 extern const u8 gText_MoveInterfacePP[];
 extern const u8 gText_MoveInterfaceType[];
 extern const u8 gText_LinkStandby[];
-extern const u8 gUnknown_83FE725[];
+extern const u8 gText_BattleMenu[];
 extern const u8 gText_WhatWillPkmnDo[];
 
 // battle_script_commands
 extern const u8 gText_BattleYesNoChoice[];
 
 // battle_controller_oak_old_man
-extern const u8 gUnknown_83FDAE2[];
-extern const u8 gUnknown_83FDB92[];
-extern const u8 gUnknown_83FDBEF[];
-extern const u8 gUnknown_83FDC58[];
-extern const u8 gUnknown_83FDC95[];
-extern const u8 gUnknown_83FDD23[];
-extern const u8 gUnknown_83FDD64[];
-extern const u8 gUnknown_83FDDEB[];
-extern const u8 gUnknown_83FDCD2[];
-extern const u8 gUnknown_83FE6FA[];
+extern const u8 gText_ForPetesSake[];
+extern const u8 gText_TheTrainerThat[];
+extern const u8 gText_TryBattling[];
+extern const u8 gText_InflictingDamageIsKey[];
+extern const u8 gText_LoweringStats[];
+extern const u8 gText_KeepAnEyeOnHP[];
+extern const u8 gText_OakNoRunningFromATrainer[];
+extern const u8 gText_WinEarnsPrizeMoney[];
+extern const u8 gText_HowDissapointing[];
+extern const u8 gText_WhatWillOldManDo[];
 
 // battle_controller_pokedude
 extern const u8 Pokedude_Text_SpeedierBattlerGoesFirst[];
@@ -338,12 +338,12 @@ extern const u8 gText_SwitchedPkmnItem[];
 extern const u8 gText_BagFullCouldNotRemoveItem[];
 extern const u8 gText_PkmnCantParticipate[];
 extern const u8 gText_CancelParticipation[];
-extern const u8 gUnknown_8417494[];
+extern const u8 gText_OakThisIsListOfPokemon[];
 extern const u8 gMenuText_Confirm[];
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];
 extern const u8 gText_Slash[];
-extern const u8 gUnknown_8417457[];
+extern const u8 gText_OakImportantToGetToKnowPokemonThroughly[];
 extern const u8 gText_PkmnNotHolding[];
 extern const u8 gText_PCMailboxFull[];
 extern const u8 gText_MailSentToPC[];
@@ -964,18 +964,50 @@ extern const u8 gText_HereYouGoThankYou[];
 extern const u8 gText_NoMoreRoomForThis[];
 
 // pokedex_screen
-extern const u8 gUnknown_8415D9C[];
-extern const u8 gUnknown_8415DB8[];
-extern const u8 gUnknown_8415DC4[];
-extern const u8 gUnknown_8415DCA[];
-extern const u8 gUnknown_8415DD1[];
-extern const u8 gUnknown_8415DD7[];
-extern const u8 gUnknown_8415F3D[];
-extern const u8 gUnknown_8415F4A[];
-extern const u8 gUnknown_8415F66[];
-extern const u8 gUnknown_8415F6C[];
-extern const u8 gUnknown_8415FFF[];
-extern const u8 gUnknown_8416002[];
+extern const u8 gText_PokedexTableOfContents[];
+extern const u8 gText_PickOK[];
+extern const u8 gText_Seen[];
+extern const u8 gText_Owned[];
+extern const u8 gText_Kanto[];
+extern const u8 gText_National[];
+extern const u8 gText_PokemonListNoColor[];
+extern const u8 gText_SearchNoColor[];
+extern const u8 gText_5Dashes[];
+extern const u8 gText_PickFlipPageCheckCancel[];
+extern const u8 gText_PokedexNo[];
+extern const u8 gText_Page[];
+extern const u8 gText_DexCategory_GrasslandPkmn[];
+extern const u8 gText_DexCategory_ForestPkmn[];
+extern const u8 gText_DexCategory_WatersEdgePkmn[];
+extern const u8 gText_DexCategory_SeaPkmn[];
+extern const u8 gText_DexCategory_CavePkmn[];
+extern const u8 gText_DexCategory_MountainPkmn[];
+extern const u8 gText_DexCategory_RoughTerrainPkmn[];
+extern const u8 gText_DexCategory_UrbanPkmn[];
+extern const u8 gText_DexCategory_RarePkmn[];
+extern const u8 gText_PokemonList[];
+extern const u8 gText_NumericalMode[];
+extern const u8 gText_PokemonHabitats[];
+extern const u8 gText_Search[];
+extern const u8 gText_AToZMode[];
+extern const u8 gText_TypeMode[];
+extern const u8 gText_LightestMode[];
+extern const u8 gText_SmallestMode[];
+extern const u8 gText_PokedexOther[];
+extern const u8 gText_ClosePokedex[];
+extern const u8 gText_NumericalModeKanto[];
+extern const u8 gText_NumericalModeNational[];
+extern const u8 gText_PokedexPokemon[];
+extern const u8 gText_HT[];
+extern const u8 gText_WT[];
+extern const u8 gText_Lbs[];
+extern const u8 gText_Cry[];
+extern const u8 gText_NextDataCancel[];
+extern const u8 gText_Next[];
+extern const u8 gText_CancelPreviousData[];
+extern const u8 gText_Area[];
+extern const u8 gText_Size[];
+extern const u8 gText_AreaUnknown[];
 
 // daycare
 extern const u8 gText_Lv[];
@@ -1158,7 +1190,7 @@ extern const u8 gText_BerryCrush_NoBerries[];
 extern const u8 gText_BerryCrush_MemberDroppedOut[];
 extern const u8 gText_BerryCrush_TimeUp[];
 extern const u8 gText_BerryCrush_CommunicationStandby[];
-extern const u8 gText_1_ClrLtGryShdwBlk_Dynamic0[];
+extern const u8 gText_1_ClrBluShdwLtBlu_Dynamic0[];
 extern const u8 gText_1_Dynamic0[];
 extern const u8 gText_SpaceTimes[];
 extern const u8 gText_XDotY[];
@@ -1467,5 +1499,53 @@ extern const u8 gUnknown_841B2DC[];
 extern const u8 gText_PokemonOnHook[];
 extern const u8 gText_NotEvenANibble[];
 extern const u8 gText_ItGotAway[];
+
+// pokemon_summary_screen
+extern const u8 gText_PokeSum_PageName_KnownMoves[];
+extern const u8 gText_PokeSum_Controls_PickSwitch[];
+extern const u8 gText_PokeSum_Controls_Pick[];
+extern const u8 gText_PokeSum_NoData[];
+extern const u8 gText_PokeSum_Controls_PageDetail[];
+extern const u8 gText_PokeSum_DexNoUnknown[];
+extern const u8 gText_PokeSum_Item_None[];
+extern const u8 gText_PokeSum_OneHyphen[];
+extern const u8 gText_PokeSum_TwoHyphens[];
+extern const u8 gText_PokeSum_PP[];
+extern const u8 gText_Somewhere[];
+extern const u8 gText_PokeSum_ATrade[];
+extern const u8 gText_PokeSum_FatefulEncounterHatched_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_FatefulEncounterHatched[];
+extern const u8 gText_PokeSum_Hatched_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_Hatched[];
+extern const u8 gText_PokeSum_FatefulEncounterMet_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_FatefulEncounterMet[];
+extern const u8 gText_PokeSum_Met_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_Met[];
+extern const u8 gText_PokeSum_MetInATrade_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_MetInATrade[];
+extern const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched[];
+extern const u8 gText_PokeSum_ApparentlyMet[];
+extern const u8 gText_PokeSum_ApparentlyMet_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_ExpPoints[];
+extern const u8 gText_PokeSum_NextLv[];
+extern const u8 gText_PokeSum_PageName_PokemonInfo[];
+extern const u8 gText_PokeSum_Controls_PageCancel[];
+extern const u8 gText_PokeSum_Controls_Cancel[];
+extern const u8 gText_PokeSum_PageName_PokemonSkills[];
+extern const u8 gText_PokeSum_Controls_Page[];
+extern const u8 gText_PokeSum_Controls_PickDelete[];
+extern const u8 gText_PokeSum_HmMovesCantBeForgotten[];
+extern const u8 gText_PokeSum_EggHatch_LongTime[];
+extern const u8 gText_PokeSum_EggHatch_SomeTime[];
+extern const u8 gText_PokeSum_EggHatch_Soon[];
+extern const u8 gText_PokeSum_EggHatch_AlmostReady[];
+extern const u8 gText_PokeSum_EggOrigin_DayCare[];
+extern const u8 gText_PokeSum_EggOrigin_Trade[];
+extern const u8 gText_PokeSum_EggOrigin_TravelingMan[];
+extern const u8 gText_PokeSum_EggOrigin_Trade[];
+extern const u8 gText_PokeSum_EggOrigin_NicePlace[];
+extern const u8 gText_PokeSum_EggOrigin_Spa[];
+extern const u8 gText_PokeSum_EggOrigin_Trade[];
 
 #endif //GUARD_STRINGS_H

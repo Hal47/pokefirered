@@ -93,7 +93,7 @@ CableClub_EventScript_ExitLinkRoom:: @ 81BB2E5
 	call CableClub_EventScript_CloseLinkAndExitLinkRoom
 	call CableClub_EventScript_CloseDirectCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	erasebox 0, 0, 29, 19
 	releaseall
 	end
@@ -103,7 +103,7 @@ CableClub_EventScript_ExitMinigameRoom:: @ 81BB2FD
 	call CableClub_EventScript_CloseLinkAndExitLinkRoom
 	call CableClub_EventScript_CloseGameCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	erasebox 0, 0, 29, 19
 	releaseall
 	end
@@ -129,7 +129,7 @@ CableClub_EventScript_ExitTradeCenter:: @ 81BB34F
 	call CableClub_EventScript_PlayerExitTradeCenter
 	call CableClub_EventScript_CloseDirectCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	erasebox 0, 0, 29, 19
 	releaseall
 	end
@@ -154,7 +154,7 @@ CableClub_EventScript_ExitUnionRoom:: @ 81BB39C
 	call CableClub_EventScript_PlayerExitUnionRoom
 	call CableClub_EventScript_CloseUnionRoomBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	erasebox 0, 0, 29, 19
 	releaseall
 	end
@@ -312,7 +312,7 @@ CableClub_EventScript_EnterColosseum:: @ 81BB5B3
 	waitmessage
 	call CableClub_EventScript_OpenDirectCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -421,7 +421,7 @@ CableClub_EventScript_EnterTradeCenter:: @ 81BB73D
 	waitmessage
 	call CableClub_EventScript_OpenDirectCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -703,10 +703,10 @@ TradeCenter_EventScript_Chair3:: @ 81BB974
 
 @ Nop in FRLG
 @ Separate labels to match GetDirectionForEventScript
-RecordCenter_EventScript_Spot0:: @ 81BB980
-RecordCenter_EventScript_Spot1:: @ 81BB980
-RecordCenter_EventScript_Spot2:: @ 81BB980
-RecordCenter_EventScript_Spot3:: @ 81BB980
+RecordCorner_EventScript_Spot0:: @ 81BB980
+RecordCorner_EventScript_Spot1:: @ 81BB980
+RecordCorner_EventScript_Spot2:: @ 81BB980
+RecordCorner_EventScript_Spot3:: @ 81BB980
 	end
 
 CableClub_EventScript_ReadTrainerCard:: @ 81BB981
@@ -748,7 +748,7 @@ TradeCenter_EventScript_Attendant:: @ 81BB9C1
 	end
 
 @ Nop in FRLG
-RecordCenter_EventScript_Attendant:: @ 81BB9D3
+RecordCorner_EventScript_Attendant:: @ 81BB9D3
 	end
 
 TradeCenter_ConfirmLeaveRoom:: @ 81BB9D4
@@ -821,7 +821,7 @@ CableClub_EventScript_EnterUnionRoom:: @ 81BBA94
 	special HelpSystem_Disable
 	call CableClub_EventScript_OpenUnionRoomBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -1126,7 +1126,7 @@ CableClub_EventScript_EnterWirelessLinkRoom:: @ 81BBF88
 	copyvar VAR_0x8007, VAR_LAST_TALKED
 	call CableClub_EventScript_OpenDirectCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -1144,7 +1144,7 @@ CableClub_EventScript_EnterWirelessLinkRoom:: @ 81BBF88
 	waitstate
 	end
 
-CableClub_EventScript_81BBFD8:: @ 81BBFD8
+CableClub_EventScript_ShowWirelessCommunicationScreen:: @ 81BBFD8
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
 	goto_if_unset FLAG_SYS_POKEDEX_GET, CableClub_EventScript_NotReadyYet
@@ -1324,7 +1324,7 @@ CableClub_EventScript_EnterMinigame:: @ 81BC262
 	copyvar VAR_0x8007, VAR_LAST_TALKED
 	call CableClub_EventScript_OpenGameCornerBarrier
 	special DrawWholeMapView
-	playse SE_TK_KASYA
+	playse SE_CLICK
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
